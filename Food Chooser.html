@@ -1,0 +1,70 @@
+<html>
+    <head>
+      <style>
+      h1{font-size: 60px; font-family: fantasy; color: red  }
+      img{width: 250px; height:250px}
+      p{font size: 25px; font-family: fantasy; color: red}
+      body{background-color: yellow}
+      #food{
+        background-color: white;
+      }
+      #food:hover
+      {
+      background-color: orange;
+      color: red;
+      }
+      </style>
+      <script>
+         function ageCheck()
+         {
+        var x = document.getElementById("byear").value;
+        x = parseInt(x);
+        var y = 2021 - x;
+        if(y > 10)
+        {
+          document.getElementById("pic3").innerHTML = "<img src = burrito.jpg onclick=printNo()>"
+        document.getElementById("pic1").innerHTML = "<img src = healthy.jpeg onclick=printYes()>"
+        document.getElementById("pic2").innerHTML = "<img src = unhealthy1.jpeg onclick=printNo()>"
+}
+  if(y < 10)
+    {
+    document.getElementById("pic1").innerHTML = "<img src = younghealthy.jpeg onclick=printYes()>"
+    document.getElementById("pic2").innerHTML = "<img src = youngunhealthy1.jpeg onclick=printNo()>"
+    document.getElementById("pic3").innerHTML = "<img src = youngunhealthy.jpeg onclick=printNo()>"
+  }
+  if (y < 0)
+  {
+    document.getElementById("message").innerHTML = "Error you are" + y + "years old"
+  }
+  if (y > 200)
+  {
+    document.getElementById("message").innerHTML = "Error you are" + y + "years old"
+  }
+         }
+         function printYes()
+         {
+           document.getElementById("message").innerHTML = "This is healthy"
+         }
+         function printNo()
+         {
+           document.getElementById("message").innerHTML = "This is unhealthy"
+         }
+      </script>
+    </head>
+    <body>
+      <center>
+       <h1>Food chooser</h1>
+       <p>Find the best and healthiest choice of food for you!</p>
+       <input type = "text" placeholder="Type Birth Year" id = "byear">
+       <input type = "button" value = "Submit" onclick = "ageCheck()" id = "food">
+       <br><br>
+       <table>
+         <tr>
+       <td><p id = "pic1"></p></td>
+       <td><p id = "pic2"></p></td>
+       <td><p id = "pic3"></p></td>
+     </tr>
+   </table>
+       <p id = "message"></p>
+    </body>
+</html>
